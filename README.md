@@ -1,6 +1,6 @@
 # Página de Login
 
-Este é um projeto simples de uma tela de login de usuário em HTML, CSS e Javascript. O objetivo do projeto é simular uma página de login de usuário com visual cartunesco/HQs.
+Este é um projeto simples de uma tela de login em HTML, CSS e Javascript. O objetivo do projeto é simular uma página de login de usuário com visual cartunesco/HQs.
 
 ## Como executar
 
