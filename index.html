@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form onsubmit="login()" method="POST">
+      <div class="inputContainer">
+        <input
+          placeholder="Usuário"
+          id="username"
+          name="username"
+          type="text"
+        />
+      </div>
+      <div class="inputContainer">
+        <input
+          placeholder="Senha"
+          id="password"
+          name="password"
+          type="password"
+        />
+      </div>
+      <button class="btn" type="submit">Entrar</button>
+      <p>
+        Não consegue entrar?
+        <span class="link" onclick="fillForm()">Tente o usuário de teste!</span>
+      </p>
+    </form>
+
+    <footer>
+      <p>2023 - Pedro Dell'Olio</p>
+    </footer>
+
+    <script>
+      function login() {
+        event.preventDefault();
+        const username = event.target.username.value.trim();
+        const password = event.target.password.value.trim();
+        let errors = [];
+
+        if (username !== "Pedro")
+          errors.push(`O usuário ${username} não existe.`);
+        if (password !== "1234") errors.push("Senha incorreta.");
+
+        if (errors.length === 0) {
+          window.location.replace("/home.html");
+        } else {
+          const errorMessage =
+            errors.length === 1 ? errors[0] : errors.join(" ");
+          alert(errorMessage + " Tente novamente!");
+        }
+      }
+
+      function fillForm() {
+        document.querySelector("#username").value = "Pedro";
+        document.querySelector("#password").value = "1234";
+      }
+    </script>
+  </body>
+</html>
